@@ -74,7 +74,7 @@ jobs:
 
       - name: Detect languages and add labels
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
           PR_NUM: ${{ github.event.number }}
         run: |
           node --input-type=module -e "
