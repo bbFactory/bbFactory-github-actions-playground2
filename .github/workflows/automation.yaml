@@ -25,6 +25,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           current_pr_number=$(gh pr view --json number -q .number)
+          
           # 이전 PR의 작성자 가져오기 (열린 PR 우선, 없으면 닫힌 PR)
           previous_pr_author=$(gh pr list --limit 2 --json author --jq 'map(select(.number != '$current_pr_number'))[0].author.login')
  
